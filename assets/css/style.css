@@ -18,14 +18,12 @@ a {
 /* Common class */
 .btn {
     display: inline-block;
-    min-width: 118px;
     font-weight: 600;
     font-size: 1.6rem;
+    color: #FFFFFF;
+    min-width: 118px;
     line-height: 50px;
     text-align: center;
-    background: #171100;
-    border-radius: 24.5px;
-    color: #FFFFFF;
 }
 
 .content {
@@ -36,7 +34,7 @@ a {
 }
 
 /* Begin */
-
+/* --------------------------------Header */
 .header {
     background-color: #FFFCF4;
 }
@@ -46,6 +44,7 @@ a {
     top: -28px;
 }
 
+/* --------------------------------Nav bar */
 .nav {
     display: flex;
     align-items: center;
@@ -64,30 +63,36 @@ a {
     color: #5F5B53;
 }
 
-.nav__list-item__link.active {
-    text-shadow: 1px 0 0 #171100;
+.nav__list-item__link:hover {
+    opacity: 0.8;
 }
 
-.nav__list-item__link:hover {
-    opacity: 0.9;
+.nav__list-item__link.active {
+    text-shadow: 1px 0 0 currentColor;
+    font-size: 16px;
+    color: #171100;
 }
 
 .nav__list-item__link.active::after {
     content: "";
     position: absolute;
-    left: 21px;
     bottom: 6px;
-    display: block;
+    left: 21px;
     width: 12px;
     height: 2px;
-    background-color: #171100;
+    background: #171100;
     border-radius: 1px;
 }
+
+
 
 .nav__action {
     margin-left: 49px;
 }
 
+
 .btn__sign-up {
+    background: #171100;
+    border-radius: 24.5px;
     min-width: 144px;
 }
