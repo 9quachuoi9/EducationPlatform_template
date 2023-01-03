@@ -36,6 +36,16 @@ a {
     border-radius: 999px;
 }
 
+.tiny-btn {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #634700;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .content {
     width: 1170px;
     max-width: calc(100% - 48px);
@@ -397,4 +407,48 @@ a {
 .btn__book:hover {
     background-color: var(--main-color);
     color: #fff;
+}
+
+/* ------------------------feedback */
+.feedback {
+    padding: 96px 0;
+    background-color: #2e2100;
+}
+
+.feedback .body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feedback__user-avatar img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+}
+
+.feedback__user-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.42;
+    color: #f7f7f7;
+}
+
+.feedback__user-jd {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.86;
+    color: #bfbcb3;
+}
+
+.feedback__cta {
+    display: flex;
+    gap: 6px;
+}
+.feedback__cta .active {
+    background-color: var(--main-color);
 }
