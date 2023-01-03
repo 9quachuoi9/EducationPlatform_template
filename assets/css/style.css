@@ -4,7 +4,8 @@
 
 :root {
     --font-heading: "Sen", sans-serif;
-    --main-color: #FFB900;
+    --main-color: #ffb900;
+    --text-bold-color: #171100;
 }
 
 html {
@@ -25,11 +26,13 @@ a {
     display: inline-block;
     font-weight: 600;
     font-size: 1.6rem;
-    color: #FFFFFF;
+    color: #ffffff;
     min-width: 118px;
     line-height: 50px;
     text-align: center;
-    background: #171100;
+    background: var(--text-bold-color);
+    border: none;
+    cursor: pointer;
     border-radius: 999px;
 }
 
@@ -40,10 +43,43 @@ a {
     margin-right: auto;
 }
 
+.heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-bold-color);
+}
+
+.heading.lv1 {
+    font-size: 5.8rem;
+    line-height: 1.17;
+}
+
+.heading.lv2 {
+    font-size: 3.8rem;
+    line-height: 1.26;
+}
+
+.desc {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #5f5b53;
+}
+
+.circle__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
 /* Begin */
 /* --------------------------------Header */
 .header {
-    background-color: #FFFCF4;
+    background-color: #fffcf4;
 }
 
 .header.fixed {
@@ -68,17 +104,18 @@ a {
     position: relative;
     padding: 8px 21px;
     font-size: 1.6rem;
-    color: #5F5B53;
+    color: #5f5b53;
 }
 
 .nav__item-link:hover {
-    opacity: 0.8;
+    color: var(--text-bold-color);
+    /* text-shadow: 1px 0 0 currentColor; */
 }
 
 .nav__item-link--active {
     text-shadow: 1px 0 0 currentColor;
     font-size: 16px;
-    color: #171100;
+    color: var(--text-bold-color);
 }
 
 .nav__item-link--active::after {
@@ -88,16 +125,13 @@ a {
     left: 21px;
     width: 12px;
     height: 2px;
-    background: #171100;
+    background: var(--text-bold-color);
     border-radius: 1px;
 }
-
-
 
 .nav__action {
     margin-left: 49px;
 }
-
 
 .btn__sign-up {
     min-width: 144px;
@@ -107,7 +141,7 @@ a {
 
 .hero {
     padding: 56px 0 65px 0;
-    background-color: #FFFCF4;
+    background-color: #fffcf4;
 }
 
 .hero__body {
@@ -143,26 +177,22 @@ a {
     align-items: center;
 }
 
-.hero__media__item+.hero__media__item {
+.hero__media__item + .hero__media__item {
     margin-top: 14px;
 }
 
 .hero__media__item-icon {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFF9E8;
+    background-color: #fff9e8;
 }
 
 .hero__media__item:nth-of-type(2) .hero__media__item-icon {
-    background-color: #FCEFFF;
+    background-color: #fcefff;
 }
 
 .hero__media__item:nth-of-type(3) .hero__media__item-icon {
-    background-color: #EBEAFF;
+    background-color: #ebeaff;
 }
 
 .hero__media__info {
@@ -173,14 +203,14 @@ a {
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 1.86;
-    color: #5F5B53;
+    color: #5f5b53;
 }
 
 .hero__media__title {
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 1.67;
-    color: #171100;
+    color: var(--text-bold-color);
 }
 
 .hero__content {
@@ -188,21 +218,8 @@ a {
     padding: 64px 0 0 130px;
 }
 
-.hero__content__title {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 5.8rem;
-    line-height: 1.17;
-    letter-spacing: -0.02em;
-    color: #171100;
-}
-
 .hero__content__desc {
     margin-top: 22px;
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 1.67;
-    color: #5F5B53;
 }
 
 .hero__content__desc:last-child {
@@ -229,13 +246,7 @@ a {
 }
 
 .hero__cta__watch-video__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
 }
 
@@ -249,18 +260,141 @@ a {
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 1.67;
-    color: #171100;
+    color: var(--text-bold-color);
 }
 
-.hero__content__desc strong {
+.hero__content .desc strong {
     padding-right: 8px;
-    font-family: var(--font-heading);
-    font-weight: 700;
     font-size: 4.4rem;
     line-height: 1.23;
-    color: #171100;
 }
 
-.hero__content__desc strong+strong {
+.hero__content .desc strong + strong {
     margin-left: 28px;
+}
+
+/* -------------------popular */
+
+.popular {
+    padding: 200px 0;
+}
+
+.popular-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular__info__desc {
+    margin-top: 16px;
+    width: 458px;
+}
+
+.popular__control {
+    display: flex;
+    gap: 18px;
+}
+
+.popular__control__chevron {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.popular__control__chevron:hover {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.popular__course-list {
+    display: flex;
+    gap: 30px;
+    background: #ffffff;
+    margin-top: 55px;
+}
+
+.popular__course-item {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e2dfda;
+}
+
+.popular__course-item:hover {
+    box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.05);
+    /* border: none; */
+}
+
+.popular__course__img img {
+    width: 100%;
+    height: 278px;
+    object-fit: cover;
+}
+
+.popular__course__content {
+    padding: 16px 22px 22px 22px;
+}
+
+.popular__course__content-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular__course__heading {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: var(--text-bold-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.popular__course__desc {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 26px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.popular__course__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.popular__course__rating span {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+.popular__course__footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular__course__price {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--text-bold-color);
+}
+
+.btn__book {
+    font-size: 1.4rem;
+}
+
+.btn__book:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
