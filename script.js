@@ -13,6 +13,7 @@ const future = document.querySelector(".feature");
 const blog = document.querySelector(".blog");
 const header = document.querySelector(".header");
 const hero = document.querySelector(".hero");
+const nav = document.querySelector(".nav");
 
 document.querySelector(".nav__list").addEventListener("click", function (e) {
     e.preventDefault();
@@ -29,12 +30,22 @@ document.querySelector(".nav__list").addEventListener("click", function (e) {
 });
 
 // scroll to active class
-const popularCoors = popular.getBoundingClientRect();
-const feedbackCoors = feedback.getBoundingClientRect();
-const futureCoors = future.getBoundingClientRect();
-const blogCoors = blog.getBoundingClientRect();
-
-window.addEventListener("scroll", function () {
-    if (this.window.scrollY > popularCoors.top) header.classList.add("fixed");
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = function (entries) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) header.classList.add("fixed");
     else header.classList.remove("fixed");
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
 });
+
+headerObserver.observe(hero);
+
+// window.addEventListener("scroll", function () {
+//     if (this.window.scrollY > popularCoors.top) header.classList.add("fixed");
+//     else header.classList.remove("fixed");
+// });
