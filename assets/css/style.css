@@ -11,6 +11,7 @@
 
 html {
     font-size: 62.5%;
+    overflow: overlay;
 }
 
 body {
@@ -20,6 +21,20 @@ body {
 
 a {
     text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #dddddd;
+    border-radius: 999px;
 }
 
 /* Common class */
@@ -448,8 +463,8 @@ a {
     flex-shrink: 0;
     width: 100%;
     justify-content: space-between;
-    /* transform: translateX(-100%);
-    transition: all ease 1s; */
+    /* transform: translateX(-100%); */
+    transition: all ease 1s;
 }
 
 .feedback__user-avatar {
@@ -510,9 +525,6 @@ a {
     background-color: var(--main-color);
 }
 
-.body {
-}
-
 .feature__t {
     display: flex;
     align-items: center;
@@ -555,10 +567,7 @@ a {
     justify-content: space-between;
     align-items: center;
 }
-.feature__bt__content {
-}
-.feature__bt__content-title {
-}
+
 .feature__bt__content-desc {
     margin: 16px 0 32px;
 }

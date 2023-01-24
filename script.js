@@ -49,3 +49,28 @@ headerObserver.observe(hero);
 //     if (this.window.scrollY > popularCoors.top) header.classList.add("fixed");
 //     else header.classList.remove("fixed");
 // });
+
+// slider feedback
+const slides = document.querySelectorAll(".feedback__item");
+const slider = document.querySelector(".feedback__list");
+const maxSlide = slides.length;
+
+let curSlide = 0;
+
+const goToSlide = function (slide) {
+    slides.forEach((s, i) => {
+        s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+};
+
+goToSlide(0);
+
+const nextSlide = function () {
+    if (curSlide === maxSlide - 1) curSlide = 0;
+    else curSlide++;
+    goToSlide(curSlide);
+};
+
+setInterval(nextSlide, 3000);
+
+// slider blog
