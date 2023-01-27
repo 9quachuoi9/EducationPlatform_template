@@ -129,12 +129,13 @@ a {
 /* --------------------------------Header */
 .header {
     background-color: var(--background-color);
+    z-index: 9999;
 }
 
 .header.fixed {
     position: sticky;
     top: -28px;
-    z-index: 1;
+    animation: fadeInDown 0.5s;
 }
 
 /* --------------------------------Nav bar */
@@ -779,4 +780,17 @@ a {
     line-height: 1.86;
     text-align: center;
     color: #807d74;
+}
+
+@keyframes fadeInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }
